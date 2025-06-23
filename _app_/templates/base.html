@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+    <head> <!-- visible in tab title -->
+        <title> CyberBlog </title>
+    </head>
+
+    <body> <!-- visible in page -->
+
+        <header>
+            <h3>CyberBlog:</h3>  
+
+            <div class="link-group">  
+                {% if user.is_authenticated %}
+                <a href="/dashboard">Dashboard</a>  
+                <a href="/logout">Logout</a>  
+                {% else %}
+                <a href="/">Home</a>  
+                <a href="/login">Login</a>   
+                <a href="/signUp">Sign Up</a>   
+                {% endif %}
+            </div>
+            <hr>
+        </header>
+
+        <!-- Adds flash messages to the website -->
+        {% for category, msg in get_flashed_messages(with_categories=true) %}
+            <div class="flash {{ category }}">
+                {{ msg }}
+                <button onclick="this.parentElement.style.display='none'"> x </button>
+            </div>
+        {% endfor %}
+        
+        <main>
+        {% block content %} {% endblock %} <!-- Inputs other template files thats 'blocked' -->
+
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        </main>
+
+        <footer>
+            <form action="/emptylink" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"/>
+                <button type="submit">Subscribe for up-to-date news!</button>
+            </form>
+
+            <br /><br /><br /><br /><br /><br /><br />
+
+            <p>&copy; 2025 CyberBlog</p>
+        </footer>
+    </body>
+</html>
+
+
+
+<!-- Base Website Colors and visuals-->
+<style>
+    html 
+    { 
+        background-color:   rgb(236, 235, 230);
+        padding: 0px;
+        margin: 0;
+    }
+    
+     
+        body 
+        { 
+            padding: 0px;
+            margin: 0;
+        }
+        
+            header 
+            {
+                background-color:   rgb(58, 58, 56);
+                color: white;
+                padding: 1px;
+            }
+
+            main { background-color: rgb(236, 235, 230); }
+            
+            footer 
+            {
+                background-color:   rgb(58, 58, 56);
+                color: white;
+                padding: 50px; 
+            }
+
+    /* Link colors */
+    a 
+    {
+        color: rgb(166, 170, 172);         /* Change to any color you want */
+        text-decoration: none;    /* Optional: removes underline */
+    }
+
+    a:hover 
+    {
+        color: rgb(206, 210, 212);         /* Optional: hover effect */
+        text-decoration: underline;
+    }
+</style>
+
+
+<!-- Flash Message colors -->
+<style>
+    .flash {
+        color: white;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 3px;
+        position: relative;
+    }
+
+    .flash button {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    /* Category-based colors */
+    .flash.success {
+        background-color: rgb(100, 155, 100);
+    }
+
+    .flash.error {
+        background-color: rgb(224, 95, 95);
+    }
+
+    .flash.info {
+        background-color: rgb(104, 104, 102);
+    }
+</style>
+
+
+<!-- Modifies the visuals/colors of 'forms', specific 'classes' and 'input' -->
+<style>
+    /*All styled Classes*/
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .link-group
+        {
+            display: flex;
+            padding: 5px;
+            font-size: 15px; 
+            gap: 20px; /* Controls horizontal spacing */
+            align-items: center;
+        }
+
+        .input-group
+        {
+            padding: 10px; 
+            font-size: 16px; 
+            width: 100%;
+        }
+
+        .button-group
+        {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #257ac9;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .button-group:hover 
+        {
+            background-color: #4574a0;
+        }
+
+        .text_area-group
+        {
+            resize: none;
+            border-radius: 8px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 16px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .note-group
+        {
+            width: 25%;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 1px;
+            padding: 2px 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: left;
+            position: relative;
+        }
+
+
+    /*Optionally makes the edges of the input field white and rounder*/
+    input 
+    {
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+</style>

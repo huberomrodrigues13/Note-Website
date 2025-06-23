@@ -1,0 +1,43 @@
+{% extends "base.html"%} <!-- Claims that its connected to base(parent) html -->
+
+{% block content %}
+        <div  style="text-align:center;">
+                <h1> Home Page </h1> 
+
+                <h4> About: </h4>
+
+                <p>
+                        Welcome to the dashboard where you can create or delete notes! Anything 
+                        added will be available in-between sessions and after signing back in
+                        To log out, just press the 
+                        <b>Logout</b> button.
+                </p>
+
+                <br />
+
+                <h3> All Notes: </h3>
+                <div id="notes" style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+                        {% for note in user.notes %}
+                                <div class="note-group">
+                                        <p>{{ note.data }}</p>
+
+                                        <!-- Delete form -->
+                                        <form method="POST" action="/delete-note/{{ note.id }}" style="position: absolute; top: 10px; right: 15px;">
+                                                <button type="submit" style="background: none; border: none; color: #888; font-size: 14px; cursor: pointer;">x</button>
+                                        </form>
+                                </div>
+                        {% endfor %}
+                </div>
+                
+                <br />
+
+                <form method="POST" style="text-align: center; margin-top: 30px;">
+                        <textarea name="note" id="note" class="text_area-group" rows="5" cols="60" placeholder="Write your note here..."></textarea>
+                        
+                        <br /><br />
+                        <button type="submit" class="button-group">Add Note</button>
+                </form>
+        </div>
+
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+{% endblock %}
