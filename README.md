@@ -1,26 +1,26 @@
 # Note-Website
 ## Overview
-This GitHhub repo is a showcases a beginner-friendly web-app I built using Flask and SQLite. 
+This GitHub repo showcases a beginner-friendly web-app I built using Flask and SQLite. 
 
 The goal of this project was to gain hands-on experience and a better understanding of how web frameworks and relational databases work in Python. 
-It's a small full-stack application that uses HTML and CSS for front-end visuals and styling, with Flask’s Jinja templating engine to connect the 
+It's a small full-stack application that uses HTML and CSS for front-end visuals and styling, with Flask’s Jinja2 templating engine to connect the 
 front end to the Python-powered backend.
 
 
 ## Project Structure
 The project is organized into several key python files and folders:
   + _app_ folder = 
-    + templates folder =
-      + base.html =
-      + landpage.html =
-      + dashboard.html =
-      + login3.html =
-      + signup.html = 
-    + models.py =  
-    + routes.py = 
-    + init.py   =
-  + main.py =
-  + requirements.txt =
+    + templates folder = Collection of all the front-end templates
+      + base.html = The 'main' template that all others inherit from to have the same main styling choices
+      + landpage.html = Template of what the user first sees when they go on the web-app
+      + dashboard.html = Template Where the user can create and delete user-saved notes
+      + login3.html = Template where the user logs in
+      + signup.html = Template  where the user signs up 
+    + models.py =  where database models are created for the user and his/her notes
+    + routes.py = where all the url routes and their endpoint functions are written, including the views and authenticated routes
+    + init.py   = where the function called by main is created, making a instance of flask app and a empty SQLite-database with blueprints initialized from elsewhere in the app folder
+  + main.py = where the app gets created and run locally by
+  + requirements.txt =  all the libraries from any packages installed 
 
 ## Setup
 ### To run this web app yourself, you will need to install the following(via pip):
@@ -45,19 +45,18 @@ The project is organized into several key python files and folders:
     SQLAlchemy==2.0.41
     typing_extensions==4.14.0
     Werkzeug==3.1.3
- 
+
+#### After everything has been installed and cloned, you can run the app using:
+    python main.py
+Then open your browser and go to: http://127.0.0.1:5000/
 
 
-
-
-
-
-
-#The Process of creating this web-app
-
-
-
-#Installation requirements:
+## Features
+- User sign-up and login functionality
+- Dynamic landing page
+- Basic user dashboard for creating or deleting saved notes
+- HTML templating with Jinja2
+- Data persistence with SQLite and SQLAlchemy
 
 
 
