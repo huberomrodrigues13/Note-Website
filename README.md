@@ -7,8 +7,6 @@ It's a small full-stack application that uses HTML and CSS for front-end visuals
 front end to the Python-powered backend.
 
 
-
-
 ## Project Structure
 The project is organized into several key python files and folders:
   + _app_ folder = 
@@ -20,24 +18,30 @@ The project is organized into several key python files and folders:
       + signup.html = 
     + models.py =  
     + routes.py = 
-    + init.py   = 
+    + init.py   =
   + main.py =
-
-├── app/
-│   ├── templates/
-│   │   ├── base.html
-│   │   ├── landpage.html
-│   │   ├── dashboard.html
-│   │   ├── login3.html
-│   │   └── signup.html
-│   ├── __init__.py
-│   ├── models.py
-│   └── routes.py
-│
-└── main.py
-
+  + requirements.txt =
 
 ## Setup
+#### To run this web app yourself, you will need to install the following:
+    + flask
+    + flask_sqlalchemy
+
+    
+#### Below is all the libraries from any packages installed and their versions when the project was created:
+    + blinker==1.9.0
+    + click==8.2.1
+    + colorama==0.4.6
+    + Flask==3.1.1
+    + Flask-SQLAlchemy==3.1.1
+    + greenlet==3.2.3
+    + itsdangerous==2.2.0
+    + Jinja2==3.1.6
+    + MarkupSafe==3.0.2
+    + SQLAlchemy==2.0.41
+    + typing_extensions==4.14.0
+    + Werkzeug==3.1.3
+ 
 
 
 
