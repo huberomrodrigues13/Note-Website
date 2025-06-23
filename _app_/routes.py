@@ -37,9 +37,9 @@ def dashboard():
     return render_template("dashboard.html", user=current_user)
 
 
-@core.route("/test")
-def test_page():
-    return render_template("test.html")
+@core.route("/test-button", methods=["GET", "POST"])
+def test_button():
+    return redirect(url_for("core.landing_page"))
 
 
     #Event/Trigger-only route function:
@@ -135,8 +135,8 @@ def login_page():
         else:
             flash("Email does not exist or password is incorrect", category="error")
 
-    user = {"username": "Bob Gates"}
-    return render_template("login3.html", user=user)
+    user = {"username": "user"}
+    return render_template("login.html", user=user)
         #Or:
     #return render_template("login.html")
         #OR:
