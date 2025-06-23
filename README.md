@@ -23,9 +23,13 @@ The project is organized into several key python files and folders:
   + requirements.txt =
 
 ## Setup
-#### To run this web app yourself, you will need to install the following(via pip):
-    flask
-    flask_sqlalchemy
+### To run this web app yourself, you will need to install the following(via pip):
+  + flask
+  + flask_sqlalchemy
+
+#### To install the required Python packages, you can use the following commands:
+    pip install flask
+    pip install flask_sqlalchemy
 
     
 #### Below is all the libraries from any packages installed and their versions when the project was created:
