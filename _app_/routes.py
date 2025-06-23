@@ -147,6 +147,7 @@ def login_page():
 @login_required #Makes sure that user is logged in when accessing this route.
 def logout():
     logout_user()
+    flash("Has logged out of account", category="info")
     return redirect(url_for("auth.login_page"))
 #----------------------------------------End----------------------------------------#
 
