@@ -29,18 +29,3 @@ class Note(db.Model):
 
 #Tip: 'user.id' is the id field in User class. Python convention for classes are uppercased, but
     #in a database they get converted into lowercase.
-'''
-db.Model: Base class that turns your class into a DB table
-
-db.Column: Defines a table column
-
-db.String(x): A string column with max length x
-
-db.Integer: An integer column
-
-primary_key=True: This column is the table's primary key
-
-db.ForeignKey("user.id"): Links this column to another table (foreign key)
-
-db.relationship("Note"): Defines a one-to-many relationship between User and Note 
-'''
